@@ -10,13 +10,16 @@ import subprocess
 def Time():
     time = datetime.datetime.now().strftime("%H:%M")
     Say(time)
+    return time
 
 def Date():
     date = datetime.date.today()
     Say(date)
+    return date
 
 def OpenYouTube():
     webbrowser.open("https://www.youtube.com")
+    return "Youtube lauched successfully."
 
 def OpenCommandPrompt():
     subprocess.run(["cmd.exe"], shell=True)
@@ -73,14 +76,14 @@ def FindMeaning(word):
 
 
 def NonInputExecution(query):
-
+    output = None
     query = str(query).lower()
 
     if "time" in query:
-        Time()
+        output = Time()
     
     elif "date" in query:
-        Date()
+        output = Date()
     
     elif "youtube" in query:
         OpenYouTube()
@@ -93,10 +96,10 @@ def NonInputExecution(query):
 
     elif "vs code" in query:
         OpenVSCode()
-    
-    
-    
 
+    return output
+    
+    
 
 def InputExecution(tag,query):
 

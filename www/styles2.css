@@ -1,5 +1,5 @@
 body {
-    background-color: #202020; 
+    background-color:  #023047; 
     margin: 0; 
     padding: 0; 
 }
@@ -19,6 +19,7 @@ body {
 .row-container {
     display: flex;
     padding-top: 300px;
+    margin-top: 100px;
 }
 
 .box1 {
@@ -31,9 +32,10 @@ body {
 }
 
 .b1 {
-    padding: 15px 30px; 
+
+    padding: 10px 15px; 
     font-size: 18px; 
-    background-color: #4CAF50; 
+    background-color: #fb8500; 
     color: white;
     border: none; 
     border-radius: 5px; 
@@ -51,15 +53,13 @@ body {
     justify-content: center; 
     align-items: center;
     display: grid;
-
-    
-    margin: 10px;
+    margin-top: 10px;
 }
 
 .input {
     padding: 15px 30px; 
     font-size: 18px; 
-    background-color: #4CAF50; 
+    background-color: #0092cc; 
     color: white; 
     border: none; 
     border-radius: 5px; 
@@ -71,21 +71,21 @@ body {
     background-color: #0c0fba; 
 }
 
-.output:hover {
-    background-color: #0c0fba; 
-}
 
 .output{
     padding: 15px 30px; 
     font-size: 18px; 
-    background-color: #4CAF50; 
+    background-color:#0092cc; 
     color: white; 
     border: none; 
     border-radius: 5px; 
     cursor: pointer; 
     transition: background-color 0.3s ease; 
 }
-  
+
+.output:hover {
+    background-color: #0c0fba; 
+}
   
   
 

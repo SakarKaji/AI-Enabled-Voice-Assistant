@@ -14,7 +14,7 @@ CORS(app)
 
 # Load model and data
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-FILE = "TrainData3.pth"
+FILE = "TrainData.pth"
 data = torch.load(FILE)
 
 input_size = data["input_size"]

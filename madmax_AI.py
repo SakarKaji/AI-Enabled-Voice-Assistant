@@ -90,10 +90,13 @@ def Main():
                     reply = random.choice(intent["responses"])
 
                     if "time" in reply:
-                        NonInputExecution(reply)
+                        time = NonInputExecution(reply)
+                        response['output'] = time
+
 
                     elif "date" in reply:
-                        NonInputExecution(reply)
+                        date =  NonInputExecution(reply)
+                        response['output'] = date
 
                     elif "wikipedia" in reply:
                         InputExecution(reply, sentence)
