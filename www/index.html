@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Voice Assistant</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="container__left">
+        <div class="left__content">
+            <h4>WELCOME TO OUR SYSTEM</h4>
+            <p>
+              Our Own Voice Assistant is here to guide you on different subjects and automate various tasks.
+            </p>
+            
+          
+        </div>
+      </div>
+      <div class="container__right">
+        <div class="right__content">
+          <div>
+            <div id="inputMessage"></div>
+            <div id="outputMessage"></div>
+        </div>
+          <div class="action__btns">
+            <!-- <button class="btn primary__btn">Explore</button> -->
+            <button class="btn secondary__btn" onclick="startMainCode()">Start Voice Assistant</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript">
+        function startMainCode() {
+
+            console.log('startMainCode called');
+            // Simulate input message
+            var inputMessage = "User: Hello";
+            document.getElementById("inputMessage").innerText = inputMessage;
+
+            // Call Eel function and handle the response
+            eel.start_main_code()(function(response) {
+                console.log('Received response:', response);  // Debug statement
+
+                // Update the HTML elements with the new response structure
+                document.getElementById("inputMessage").innerText = response['response1'];
+                document.getElementById("outputMessage").innerText = response['response2'];
+            });
+        }
+    </script>
+  </body>
+</html>

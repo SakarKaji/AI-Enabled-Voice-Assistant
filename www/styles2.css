@@ -1,0 +1,173 @@
+body {
+    background-color: #202020; 
+    margin: 0; 
+    padding: 0; 
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+.row-container {
+    display: flex;
+    padding-top: 300px;
+}
+
+.box1 {
+    width: 200px;
+    justify-content: center; 
+    align-items: center;
+    display: flex;
+    height: 100px;
+    margin: 10px;
+}
+
+.b1 {
+    padding: 15px 30px; 
+    font-size: 18px; 
+    background-color: #4CAF50; 
+    color: white;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.b1:hover {
+    background-color: #d41c1c; 
+}
+
+.box2{
+    width: auto;
+    height: auto;
+    justify-content: center; 
+    align-items: center;
+    display: grid;
+
+    
+    margin: 10px;
+}
+
+.input {
+    padding: 15px 30px; 
+    font-size: 18px; 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.input:hover {
+    background-color: #0c0fba; 
+}
+
+.output:hover {
+    background-color: #0c0fba; 
+}
+
+.output{
+    padding: 15px 30px; 
+    font-size: 18px; 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+  
+  
+  
+
+
+
+.square {
+    right: 100;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+}
+
+.square span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#6b72ff00 50%, #000dff3b 40%);
+    box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0.5s;
+    animation: animate1 6s linear infinite;
+}
+
+.square span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#6b72ff00 50%, #000dff3b 40%);
+    box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0.5s;
+    animation: animate2 4s linear infinite;
+}
+
+.square span:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#6b72ff00 50%, #000dff3b 40%);
+    box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0.5s;
+    animation: animate3 8s linear infinite;
+}
+
+
+@keyframes animate1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate3 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

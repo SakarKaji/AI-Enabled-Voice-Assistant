@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #response {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Voice Assistant</h1>
+    <p>Click the button and speak to the assistant:</p>
+
+    <button id="startBtn">Start Listening</button>
+    <div id="response"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const startBtn = document.getElementById('startBtn');
+            const responseDiv = document.getElementById('response');
+
+            startBtn.addEventListener('click', function () {
+                // Placeholder API endpoint URL, update it with your actual backend URL
+                const apiUrl = 'http://127.0.0.1:5000/process_voice';
+
+                const formData = new FormData();
+                const audioInput = document.createElement('input');
+                audioInput.type = 'file';
+                audioInput.accept = 'audio/*';
+                audioInput.capture = 'microphone';
+
+                audioInput.addEventListener('change', function () {
+                    if (audioInput.files.length > 0) {
+                        formData.append('audio', audioInput.files[0]);
+
+                        fetch(apiUrl, {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            responseDiv.innerHTML = `<p>Assistant Response: ${data.response}</p>`;
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            responseDiv.innerHTML = '<p>An error occurred. Please try again.</p>';
+                        });
+                    }
+                });
+
+                audioInput.click();
+            });
+        });
+    </script>
+</body>
+</html>
