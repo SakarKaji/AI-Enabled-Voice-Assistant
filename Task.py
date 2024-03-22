@@ -19,7 +19,7 @@ def Date():
 
 def OpenYouTube():
     webbrowser.open("https://www.youtube.com")
-    return "Youtube lauched successfully."
+    return "Youtube opened."
 
 def OpenCommandPrompt():
     subprocess.run(["cmd.exe"], shell=True)
@@ -43,11 +43,14 @@ def GetTemperature(place):
         if temp_element:
             temp = temp_element.text
             Say(f"The current temperature in {place} is {temp}")
+            return f"The current temperature in {place} is {temp}"
         else:
             Say(f"Sorry, I couldn't find the temperature for {place}")
+            return f"Sorry, I couldn't find the temperature for {place}"
     except Exception as e:
         print(f"Error fetching temperature: {e}")
         Say(f"Sorry, I couldn't find the temperature for {place}")
+
 
 def FindMeaning(word):
     try:
@@ -65,7 +68,7 @@ def FindMeaning(word):
                     if definition:
                         meaning_text = definition[0].get('definition', '')
                         Say(f"The meaning of '{word}' is: {meaning_text}")
-                        return
+                        return f"The meaning of '{word}' is: {meaning_text}"
 
             Say(f"Sorry, I couldn't find the meaning for '{word}'")
         else:
@@ -76,7 +79,9 @@ def FindMeaning(word):
 
 
 def NonInputExecution(query):
+
     output = None
+
     query = str(query).lower()
 
     if "time" in query:
@@ -84,7 +89,7 @@ def NonInputExecution(query):
     
     elif "date" in query:
         output = Date()
-    
+
     elif "youtube" in query:
         OpenYouTube()
 
@@ -100,14 +105,15 @@ def NonInputExecution(query):
     return output
     
     
-
 def InputExecution(tag,query):
+    output = None
 
     if "wikipedia" in tag:
         name = str(query).replace ("who is","").replace("about","").replace("what is","").replace("wikipedia","").replace("where is","")
         import wikipedia
         result = wikipedia.summary(name)
         Say(result)
+        return result
 
     elif "google" in tag:
         query = str(query).replace ("google","")
@@ -118,13 +124,9 @@ def InputExecution(tag,query):
     elif "temperature" in tag:
         # Extract the location information from the query
         place = query.replace("temperature", "").strip()
-        GetTemperature(place)
+        return GetTemperature(place)
+        
 
-    elif "find" in tag:
-        word = query.replace("find", "").strip()
-        FindMeaning(word)
-
-   
-
-
-           
+    elif "explain" in tag:
+        word = query.replace("explain", "").strip()
+        return FindMeaning(word)

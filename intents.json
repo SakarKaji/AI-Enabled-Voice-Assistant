@@ -57,14 +57,14 @@
             ]
         },
         {
-            "tag": "find",
+            "tag": "explain",
             "patterns": [
-                "find",
-                "find the",
-                "find me"
+                "explain",
+                "explain the",
+                "explain meaning of"
             ],
             "responses": [
-                "find"
+                "explain"
             ]
         },
         {
@@ -490,7 +490,7 @@
                 "what's binary tree"
             ],
             "responses": [
-                "A tree data structure in which each node has at most two children, which are referred to as the left child and the right child. A recursive definition using just set theory notions is that a (non-empty) binary tree is a tuple (L, S, R), where L and R are binary trees or the empty set and S is a singleton set.[28] Some authors allow the binary tree to be the empty set as well.[29]"
+                "A tree data structure in which each node has at most two children, which are referred to as the left child and the right child. A recursive definition using just set theory notions is that a (non-empty) binary tree is a tuple (L, S, R), where L and R are binary trees or the empty set and S is a singleton set. Some authors allow the binary tree to be the empty set as well."
             ]
         },
         {

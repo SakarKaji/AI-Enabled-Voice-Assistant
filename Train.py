@@ -42,19 +42,19 @@ for (pattern_sentence,tag) in xy:
 x_train = np.array(x_train)
 y_train = np.array(y_train)
 
-num_epochs = 1000
-batch_size = 8
-learning_rate = 0.001
-input_size = len(x_train[0])
-hidden_size = 8
-output_size = len(tags)
-
-# num_epochs = 800
-# batch_size = 16
+# num_epochs = 1000
+# batch_size = 8
 # learning_rate = 0.001
 # input_size = len(x_train[0])
-# hidden_size = 16
+# hidden_size = 8
 # output_size = len(tags)
+
+num_epochs = 800
+batch_size = 16
+learning_rate = 0.001
+input_size = len(x_train[0])
+hidden_size = 16
+output_size = len(tags)
 
 print(">> Training The Chats Module :- Conciousness ")
 
@@ -142,20 +142,20 @@ print(f"Training Complete, File Saved To {FILE}")
 print("             ")
 
 # Plotting the training loss and accuracy
-plt.figure(figsize=(10, 5))
-plt.subplot(1, 2, 1)
-plt.plot(training_loss_values, label='Training Loss')
-plt.title('Training Loss over Epochs')
-plt.xlabel('Epochs')
-plt.ylabel('Loss')
-plt.legend()
+# plt.figure(figsize=(10, 5))
+# plt.subplot(1, 2, 1)
+# plt.plot(training_loss_values, label='Training Loss')
+# plt.title('Training Loss over Epochs')
+# plt.xlabel('Epochs')
+# plt.ylabel('Loss')
+# plt.legend()
 
-plt.subplot(1, 2, 2)
-plt.plot(training_accuracy_values, label='Training Accuracy')
-plt.title('Training Accuracy over Epochs')
-plt.xlabel('Epochs')
-plt.ylabel('Accuracy')
-plt.legend()
+# plt.subplot(1, 2, 2)
+# plt.plot(training_accuracy_values, label='Training Accuracy')
+# plt.title('Training Accuracy over Epochs')
+# plt.xlabel('Epochs')
+# plt.ylabel('Accuracy')
+# plt.legend()
 
-plt.tight_layout()
-plt.show()
+# plt.tight_layout()
+# plt.show()
